@@ -21,7 +21,7 @@ jobs:
         mkdir out
         python3 extract.py
     - name: Compress font
-      run: tar --sort=name --mtime='@0' --owner=0 --group=0 --numeric-owner --format=ustar -c -I 'zstd --single-thread --ultra -22' -f out.tar.zst out
+      run: tar --sort=name --mtime='@0' --owner=0 --group=0 --numeric-owner --format=ustar -c -I 'zstd --single-thread --long --ultra -22' -f out.tar.zst out
     - name: Upload
       uses: actions/upload-artifact@v2
       with:
